@@ -30,6 +30,7 @@ export const navigate = (id) => {
 			"Home",
 			"Sales",
 		]);
+		CustomPeriod._removeSummaryFromTop();
 		Produce.render();
 		CowProduce.render();
 		CowProduce.clickCowBtnHandler(showCowproduce);
@@ -46,7 +47,7 @@ export const navigate = (id) => {
 			"Home",
 			"Sales",
 		]);
-
+		CustomPeriod._removeSummaryFromTop();
 		Produce.render(undefined, 7);
 		CowProduce.render(undefined, 7);
 		CowProduce.clickCowBtnHandler(showCowproduce);
@@ -62,7 +63,7 @@ export const navigate = (id) => {
 			"Home",
 			"Sales",
 		]);
-
+		CustomPeriod._removeSummaryFromTop();
 		Produce.render(undefined, 30);
 		CowProduce.render(undefined, 30);
 		CowProduce.clickCowBtnHandler(showCowproduce);
@@ -102,7 +103,7 @@ export const navigate = (id) => {
 			"Home",
 			"Sales",
 		]);
-
+		CustomPeriod._removeSummaryFromTop();
 		CustomPeriod.render();
 	}
 };

@@ -32,14 +32,15 @@ export const showCowproduce = (id, days) => {
 Navigation.clickLinkHandler(navigate);
 showSummary();
 
-function dateConverter(date) {}
-
 //Search btn click handler
 function perPeriodHandler(start, end) {
 	const startDate = new Date(start).getTime();
 	const endDate = new Date(end).getTime();
 
-	if (startDate && endDate) Produce.render(null, null, startDate, endDate);
+	if (startDate && endDate) {
+		Produce.render(null, null, startDate, endDate);
+		CustomPeriod._moveSearchToTop();
+	}
 }
 
 CustomPeriod.submitHandler(perPeriodHandler);

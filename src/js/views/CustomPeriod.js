@@ -5,7 +5,7 @@ class CustomPeriod extends View {
 
 	_generateMarkUp() {
 		return `
-        <div class = 'period-container'
+        
             <form class="search">
                 <div class="form-group">
                     <label for="startDate">Start date</label>    
@@ -22,13 +22,22 @@ class CustomPeriod extends View {
             <div class="results"> 
                 
             </div>
-        </div>
         `;
+	}
+	_moveSearchToTop() {
+		document.querySelector(".search").classList.add("move-to-top");
+		document.querySelector(".produce-summary").classList.add("custom-display");
+	}
+	_removeSummaryFromTop() {
+		document
+			.querySelector(".produce-summary")
+			.classList.remove("custom-display");
 	}
 	submitHandler(handler) {
 		this._parentElement.addEventListener("click", (e) => {
 			const startDate = document.getElementById("startDate").value;
 			const endDate = document.getElementById("endDate").value;
+
 			handler(startDate, endDate);
 		});
 	}

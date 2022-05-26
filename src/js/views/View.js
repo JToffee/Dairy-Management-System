@@ -8,7 +8,7 @@ export default class View {
 	_startDate;
 	_endDate;
 
-	render(links = null, days = 0, startDate = null, endDate = null) {
+	render(links = null, days = 0, startDate = undefined, endDate = undefined) {
 		this._days = days;
 		// this._data = data;
 		this.links = links && links;
@@ -42,19 +42,22 @@ export default class View {
 		const milliseconds = this._days * TOMILLISECS;
 		this._startDate =
 			new Date(new Date().setHours(0, 0, 0, 0)).getTime() - milliseconds;
+		return this._startDate;
 	}
 
 	//Filter produce by dates and get the sum
-	_filterProduceSum(data) {
-		this._setStartDate();
 
-		return (
+	_filterProduceSum(data) {
+		if (!this._startDate) this._startDate = this._setStartDate();
+		if (!this._endDate) this._endDate = new Date().getTime();
+
+		const newData =
 			data &&
 			data.filter(
-				(item) =>
-					item.date <= new Date().getTime() && item.date >= this._startDate
-			)
-		);
+				(item) => item.date <= this._endDate && item.date >= this._startDate
+			);
+
+		return newData;
 	}
 
 	// filter produce by dates and milking time
@@ -63,16 +66,15 @@ export default class View {
 		if (!this._startDate) this._startDate = this._setStartDate();
 		if (!this._endDate) this._endDate = new Date().getTime();
 
-		console.log(this._startDate, this._endDate);
-
-		return (
+		const newData =
 			data &&
 			data.filter(
 				(item) =>
 					item.time === time &&
 					item.date <= this._endDate &&
 					item.date >= this._startDate
-			)
-		);
+			);
+
+		return newData;
 	}
 }
