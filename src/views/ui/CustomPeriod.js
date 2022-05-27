@@ -27,13 +27,18 @@ class CustomPeriod extends View {
 	_moveSearchToTop() {
 		document.querySelector(".search").classList.add("move-to-top");
 		document.querySelector(".produce-summary").classList.add("custom-display");
+		document.querySelector(".all").classList.add("move-to-bottom");
+		document.querySelector("footer").classList.add("remove-footer");
 	}
+
 	_removeSummaryFromTop() {
 		document
 			.querySelector(".produce-summary")
 			.classList.remove("custom-display");
+		document.querySelector(".all").classList.remove("move-to-bottom");
+		document.querySelector("footer").classList.remove("remove-footer");
 	}
-	submitHandler(handler) {
+	submitPeriodHandler(handler) {
 		this._parentElement.addEventListener("click", (e) => {
 			const startDate = document.getElementById("startDate").value;
 			const endDate = document.getElementById("endDate").value;

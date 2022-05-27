@@ -30,9 +30,9 @@ class InputProduce extends View {
 			<div class="form-group">
 				<label for="time">Time</label>
 				<select id="time" name= 'time' value="time" required>
-					<option id = 'time' name = 'time' value="Morning">Morning</option>
-					<option id = 'time' name = 'time' value="Noon">Noon</option>
-					<option id = 'time' name = 'time' value="Evening">Evening</option>
+					<option id = 'time' name = 'time' value="morning">Morning</option>
+					<option id = 'time' name = 'time' value="noon">Noon</option>
+					<option id = 'time' name = 'time' value="evening">Evening</option>
 				</select>
 			</div>
 			<div class="form-group">

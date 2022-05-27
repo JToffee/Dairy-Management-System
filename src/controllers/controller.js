@@ -41,12 +41,14 @@ function perPeriodHandler(start, end) {
 	const endDate = new Date(end).getTime();
 
 	if (startDate && endDate) {
-		Produce.render(null, null, startDate, endDate);
+		Produce.render(state.produce, undefined, startDate, endDate);
+		CowProduce.render(state.produce, undefined, startDate, endDate);
 		CustomPeriod._moveSearchToTop();
+		CustomPeriod.moveToBottom();
 	}
 }
 
-CustomPeriod.submitHandler(perPeriodHandler);
+CustomPeriod.submitPeriodHandler(perPeriodHandler);
 
 // Input prodce handler
 

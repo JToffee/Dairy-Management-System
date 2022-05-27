@@ -9,6 +9,7 @@ class CowProduce extends View {
 
 	showCowProduce(data) {
 		this._cowProduce = data;
+		console.log(this._cowProduce);
 	}
 
 	_generateMarkUp() {

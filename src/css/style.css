@@ -378,6 +378,14 @@ td {
 	top: 35vh;
 	left: 10%;
 }
+.move-to-bottom {
+	position: absolute;
+	top: 130vh;
+	left: 5vw;
+}
+.remove-footer {
+	display: none;
+}
 
 /* .results {
 	background-color: #092841;

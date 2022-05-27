@@ -46,7 +46,8 @@ export default class View {
 
 	//Filter produce by dates and get the sum
 
-	_filterProduceSum() {
+	_filterProduceSum(data) {
+		if (data) this._data = data;
 		if (!this._startDate) this._startDate = this._setStartDate();
 		if (!this._endDate) this._endDate = new Date().getTime();
 
