@@ -1,4 +1,4 @@
-import View from "./View.js";
+import View from "../View.js";
 
 class InputSale extends View {
 	_parentElement = document.getElementById("forms-input");

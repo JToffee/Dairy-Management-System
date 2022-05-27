@@ -1,12 +1,14 @@
-import Navigation from "./views/Navigation.js";
-import Banner from "./views/Banner.js";
-import Sales from "./views/Sales.js";
-import InputProduce from "./views/InputProduce.js";
-import Produce from "./views/Produce.js";
-import GeneralSummary from "./views/GeneralSummary.js";
-import CowProduce from "./views/CowProduce.js";
-import { showCowproduce, showSummary } from "../controller.js";
-import CustomPeriod from "./views/CustomPeriod.js";
+import Sales from "../views/sales/Sales.js";
+import InputProduce from "../views/produce/InputProduce.js";
+import GeneralSummary from "../views/GeneralSummary.js";
+import Navigation from "../views/ui/Navigation.js";
+import Banner from "../views/ui/Banner.js";
+import CowProduce from "../views/produce/CowProduce.js";
+import CustomPeriod from "../views/ui/CustomPeriod.js";
+import Produce from "../views/produce/Produce.js";
+
+import { state } from "./controller.js";
+import { showCowproduce, showSummary } from "./controller.js";
 
 //navigate
 export const navigate = (id) => {
@@ -31,8 +33,8 @@ export const navigate = (id) => {
 			"Sales",
 		]);
 		CustomPeriod._removeSummaryFromTop();
-		Produce.render();
-		CowProduce.render();
+		Produce.render(state.produce);
+		CowProduce.render(state.produce);
 		CowProduce.clickCowBtnHandler(showCowproduce);
 	}
 	if (id === "Home") showSummary();
@@ -48,8 +50,8 @@ export const navigate = (id) => {
 			"Sales",
 		]);
 		CustomPeriod._removeSummaryFromTop();
-		Produce.render(undefined, 7);
-		CowProduce.render(undefined, 7);
+		Produce.render(state.produce, 7);
+		CowProduce.render(state.produce, 7);
 		CowProduce.clickCowBtnHandler(showCowproduce);
 	}
 	if (id === "Month") {
@@ -64,8 +66,8 @@ export const navigate = (id) => {
 			"Sales",
 		]);
 		CustomPeriod._removeSummaryFromTop();
-		Produce.render(undefined, 30);
-		CowProduce.render(undefined, 30);
+		Produce.render(state.produce, 30);
+		CowProduce.render(state.produce, 30);
 		CowProduce.clickCowBtnHandler(showCowproduce);
 	}
 	if (id === "Sales") {
@@ -90,7 +92,7 @@ export const navigate = (id) => {
 			"Sales",
 		]);
 
-		InputProduce.render();
+		InputProduce.render(state.cows);
 	}
 	if (id === "Custom Period") {
 		Navigation.render([

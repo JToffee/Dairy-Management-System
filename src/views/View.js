@@ -1,4 +1,4 @@
-import { TOMILLISECS } from "../../constants/config.js";
+import { TOMILLISECS } from "../constants/config.js";
 
 export default class View {
 	_data;
@@ -8,10 +8,9 @@ export default class View {
 	_startDate;
 	_endDate;
 
-	render(links = null, days = 0, startDate = undefined, endDate = undefined) {
+	render(data, days = 0, startDate = undefined, endDate = undefined) {
 		this._days = days;
-		// this._data = data;
-		this.links = links && links;
+		this._data = data;
 		this._startDate = startDate;
 		this._endDate = endDate;
 
@@ -47,13 +46,13 @@ export default class View {
 
 	//Filter produce by dates and get the sum
 
-	_filterProduceSum(data) {
+	_filterProduceSum() {
 		if (!this._startDate) this._startDate = this._setStartDate();
 		if (!this._endDate) this._endDate = new Date().getTime();
 
 		const newData =
-			data &&
-			data.filter(
+			this._data &&
+			this._data.filter(
 				(item) => item.date <= this._endDate && item.date >= this._startDate
 			);
 
@@ -63,12 +62,13 @@ export default class View {
 	// filter produce by dates and milking time
 
 	filterByDuration(time = null, data) {
+		if (data) this._data = data;
 		if (!this._startDate) this._startDate = this._setStartDate();
 		if (!this._endDate) this._endDate = new Date().getTime();
 
 		const newData =
-			data &&
-			data.filter(
+			this._data &&
+			this._data.filter(
 				(item) =>
 					item.time === time &&
 					item.date <= this._endDate &&

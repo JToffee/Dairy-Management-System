@@ -1,11 +1,22 @@
-import View from "./View.js";
+import View from "../View.js";
 
 class Navigation extends View {
 	_parentElement = document.querySelector(".nav");
 	_id;
+	_links;
 
+	render(links) {
+		this._links = links;
+		const markUp = this._generateMarkUp();
+
+		this._parentElement.style.display = "flex";
+		this._parentElement.style.marginLeft = "auto";
+		this._parentElement.style.marginRight = "auto";
+
+		this._parentElement.insertAdjacentHTML("afterBegin", markUp);
+	}
 	_generateMarkUp() {
-		const markUp = this.links
+		const markUp = this._links
 			.map(
 				(link) =>
 					`<li><a href="#" class ='link ${

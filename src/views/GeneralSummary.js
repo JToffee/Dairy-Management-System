@@ -1,10 +1,8 @@
 import View from "./View.js";
-import { produce } from "../../../data/produce.js";
-import { sum } from "../../../util/sum.js";
+import { sum } from "../util/sum.js";
 
 class Summary extends View {
 	_parentElement = document.querySelector(".thumbnails-container");
-	_produceSum = sum(produce);
 
 	_generateMarkUp() {
 		// const difference = 8000;
@@ -19,7 +17,7 @@ class Summary extends View {
         <div class="thumbnail">
             <p class="title--thumbnail">Milk Produce  </p>
             <p class="value-thumbnail">${sum(
-							this._filterProduceSum(produce)
+							this._filterProduceSum()
 						)} LITRES</p>
             <p> + 10</p>
         </div>

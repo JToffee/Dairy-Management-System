@@ -1,17 +1,14 @@
-import View from "./View.js";
+import View from "../View.js";
 import { cows } from "../../../data/cows.js";
-import { sum } from "../../../util/sum.js";
-import { produce } from "../../../data/produce.js";
+import { sum } from "../../util/sum.js";
 
 class CowProduce extends View {
 	_parentElement = document.querySelector(".all");
 	_cowProduce;
-	_produce = produce;
 	_cowBtnContainer;
 
 	showCowProduce(data) {
 		this._cowProduce = data;
-		console.log(this._cowProduce);
 	}
 
 	_generateMarkUp() {
@@ -42,14 +39,10 @@ class CowProduce extends View {
                                     <td>${sum(
 																			this._filterProduceSum(this._cowProduce)
 																		)}</td>`
-									: `<td>${sum(
-											this.filterByDuration("morning", this._produce)
-									  )}</td>
-								<td>${sum(this.filterByDuration("noon", this._produce))}</td>
-								<td>${sum(this.filterByDuration("evening", this._produce))}</td>
-                                <td>${sum(
-																	this._filterProduceSum(this._produce)
-																)}</td>`
+									: `<td>${sum(this.filterByDuration("morning"))}</td>
+								<td>${sum(this.filterByDuration("noon"))}</td>
+								<td>${sum(this.filterByDuration("evening"))}</td>
+                                <td>${sum(this._filterProduceSum())}</td>`
 							}
 							</tr>
 						</table>

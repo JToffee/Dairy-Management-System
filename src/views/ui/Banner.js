@@ -1,4 +1,4 @@
-import View from "./View.js";
+import View from "../View.js";
 
 class Banner extends View {
 	_parentElement = document.querySelector(".banner");

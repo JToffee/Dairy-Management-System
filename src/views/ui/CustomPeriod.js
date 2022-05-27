@@ -1,4 +1,4 @@
-import View from "./View.js";
+import View from "../View.js";
 
 class CustomPeriod extends View {
 	_parentElement = document.querySelector(".custom-period");
