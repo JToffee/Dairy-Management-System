@@ -14,22 +14,22 @@ export class Produce extends View {
 					<div class="thumbnail">
 						<p class="title--thumbnail">Morning</p>
 						<p class="value-thumbnail">${sum(this.filterByDuration("morning"))} LITRES</p>
-						<p>+ 10</p>
+						<p  class = 'difference'>+ 10</p>
 					</div>
 					<div class="thumbnail">
 						<p class="title--thumbnail">Noon</p>
 						<p class="value-thumbnail">${sum(this.filterByDuration("noon"))} LITRES</p>
-						<p>+ 10</p>
+						<p  class = 'difference'>+ 10</p>
 					</div>
 					<div class="thumbnail ">
 						<p class="title--thumbnail" class="title--thumbnail">Evening</p>
 						<p class="value-thumbnail">${sum(this.filterByDuration("evening"))} LITRES</p>
-						<p>+44</p>
+						<p  class = 'difference'>+44</p>
 					</div>
 					<div class="thumbnail thumbnail--active" >
 						<p class="title--thumbnail">Total</p>
 						<p class="value-thumbnail">${sum(this._filterProduceSum())} LITRES</p>
-						<p>+ 50</p>
+						<p  class = 'difference'>${this.difference()}</p>
 					</div>
 				</section>
 				

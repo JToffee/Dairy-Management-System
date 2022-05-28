@@ -19,22 +19,22 @@ class Summary extends View {
             <p class="value-thumbnail">${sum(
 							this._filterProduceSum()
 						)} LITRES</p>
-            <p> + 10</p>
+            <p class = 'difference'> ${this.difference()}</p>
         </div>
         <div class="thumbnail">
             <P class="title--thumbnail">Sales Amount </P>
             <p class="value-thumbnail">500,000 KSH</p>
-            <p>+ 10,000</p>
+            <p  class = 'difference'>+ 10,000</p>
         </div>
         <div class="thumbnail thumbnail--active">
             <p class="title--thumbnail" class="title--thumbnail">Expenses</p>
             <p class="value-thumbnail">-100,000</p>
-            <p>-5,000</p>
+            <p  class = 'difference'>-5,000</p>
         </div>
         <div class="thumbnail">
             <p class="title--thumbnail">Profits</p>
             <p class="value-thumbnail">400,000 KSH</p>
-            <p> - 50,000</p>
+            <p  class = 'difference'> - 50,000</p>
         </div>`;
 	}
 }

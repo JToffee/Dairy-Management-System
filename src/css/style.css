@@ -22,7 +22,7 @@ body {
 	scroll-behavior: smooth;
 }
 header {
-	height: 20vh;
+	height: 2s0vh;
 }
 
 .container {
@@ -35,14 +35,15 @@ header {
 .header {
 	width: 100vw;
 	height: fit-content;
-	padding-top: 2vh;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /* NAV */
 
 .nav {
 	width: 100vw;
-	height: 8vh;
+	height: 6vh;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -83,7 +84,7 @@ header {
 /* BANNER */
 
 .banner {
-	height: 65vh;
+	height: 60vh;
 	background-color: var(--color-bcg-8);
 	margin-top: 2vh;
 }
@@ -98,9 +99,9 @@ header {
 }
 .banner-content h1 {
 	color: var(--color-white);
-	font-size: 4vw;
+	font-size: 4.5rem;
 	flex-basis: 100%;
-	margin-top: 20vh;
+	margin-top: 15vh;
 	font-family: "PT Sans Caption", sans-serif;
 	/* color: var(--color-white); */
 }
@@ -110,6 +111,7 @@ header {
 }
 .banner-content h3 {
 	margin-left: 5vw;
+	margin-top: -10vh;
 	color: var(--color-bcg-5);
 }
 
@@ -188,6 +190,9 @@ header {
 	width: fit-content;
 	padding: 1vw;
 	color: var(--color-bcg-3);
+}
+.thumbnail .difference {
+	margin-left: 2vw;
 }
 /* PRODUCE INPUT FORM */
 
